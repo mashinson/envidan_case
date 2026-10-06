@@ -1,3 +1,4 @@
+using System.Globalization;
 using SOLID.Assignment.Interfaces;
 using SOLID.Assignment.Reporting;
 using SOLID.Assignment.Shapes;
@@ -17,6 +18,26 @@ public class ShapeReportTests
     private readonly ShapeReport _report;
 
     public ShapeReportTests() => _report = new ShapeReport(_writer);
+
+    [Fact]
+    public void ReportShapeArea_WritesEachAreaWithTwoDecimals_InAnyCulture()
+    {
+        var originalCulture = CultureInfo.CurrentCulture;
+        CultureInfo.CurrentCulture = new CultureInfo("pt-PT"); // uses a comma as decimal separator
+
+        try
+        {
+            _report.ReportShapeArea([new Square(2), new RightAngledTriangle(3, 3)]);
+        }
+        finally
+        {
+            CultureInfo.CurrentCulture = originalCulture;
+        }
+
+        Assert.Equal(
+            new[] { "The area of the square is 4.00", "The area of the triangle is 4.50" },
+            _writer.Messages);
+    }
 
     [Fact]
     public void OneLargestShape_ReportsLargest()

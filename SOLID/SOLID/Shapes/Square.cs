@@ -7,7 +7,7 @@ public class Square : IShape
     public Square(int side)
     {
         ArgumentOutOfRangeException.ThrowIfNegativeOrZero(side);
-        Area = side * side;
+        Area = (double)side * side;
     }
 
     public double Area { get; }

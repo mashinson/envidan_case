@@ -1,3 +1,4 @@
+using System.Globalization;
 using SOLID.Assignment.Interfaces;
 
 namespace SOLID.Assignment.Reporting;
@@ -8,7 +9,7 @@ public class ShapeReport(IOutputWriter writer) : IShapeReport
     {
         foreach (var shape in shapes)
         {
-            writer.WriteResult(ShapeMessagesHelper.Area(shape.Name, shape.Area.ToString("F2")));
+            writer.WriteResult(ShapeMessagesHelper.Area(shape.Name, shape.Area.ToString("F2", CultureInfo.InvariantCulture)));
         }
     }
 

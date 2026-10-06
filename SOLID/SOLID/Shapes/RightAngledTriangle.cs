@@ -8,7 +8,7 @@ public class RightAngledTriangle : IShape
     {
         ArgumentOutOfRangeException.ThrowIfNegativeOrZero(width);
         ArgumentOutOfRangeException.ThrowIfNegativeOrZero(height);
-        Area = width * height / 2.0;
+        Area = (double)width * height / 2;
     }
 
     public double Area { get; }

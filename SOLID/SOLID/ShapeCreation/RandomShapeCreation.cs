@@ -3,12 +3,11 @@ using SOLID.Assignment.Shapes;
 
 namespace SOLID.Assignment.ShapeCreation;
 
-public class RandomShapeCreation : IRandomShapeCreation
+public class RandomShapeCreation(Random random) : IRandomShapeCreation
 {
     private const int MaxDimension = 10;
-    private readonly Random _random = new();
 
-    private int NextDimension() => _random.Next(MaxDimension) + 1;
+    private int NextDimension() => random.Next(MaxDimension) + 1;
 
     public IShape CreateRandomCircleShape() => new Circle(NextDimension());
 

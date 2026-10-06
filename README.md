@@ -22,7 +22,7 @@ dotnet test
 
 ## Assignment 2 – Design patterns
 
-No code. `DesignPatterns.md` covers the three patterns I use most (Dependency Injection, Chain of Responsibility, Observer) and a few more from my projects (Strategy, Resolver/Registry, Facade).
+No code. `DesignPatterns.md` covers the three patterns I use most (Dependency Injection, Chain of Responsibility, Observer) and a few more from my interesting tasks (Strategy, Resolver/Registry, Facade).
 
 ## Assignment 3 – Onion Architecture
 
