@@ -96,6 +96,8 @@ Next tests to add:
 ## Run
 
 ```
-dotnet run --project Onion.Assignment   # Swagger UI at /swagger
+dotnet run --project Onion.Assignment
 dotnet test
 ```
+
+Swagger UI: http://localhost:5242/swagger. Example call: http://localhost:5242/hello?name=Bob returns `Hello, Bob!`.

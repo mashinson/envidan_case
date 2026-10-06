@@ -32,6 +32,11 @@ Solution: `Onion/Onion.sln`, split into `Onion.Domain`, `Onion.Application` and 
 
 ```
 cd Onion
-dotnet run --project Onion.Assignment   # Swagger UI at /swagger
+dotnet run --project Onion.Assignment
 dotnet test
 ```
+
+The API runs on `http://localhost:5242`:
+
+- Swagger UI: http://localhost:5242/swagger
+- Example call: http://localhost:5242/hello?name=Bob returns `Hello, Bob!`
